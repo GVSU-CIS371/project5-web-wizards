@@ -10,7 +10,7 @@
     Price: ${{ product.data.price }}
   </v-btn>
   <v-btn>
-    <v-icon color="yellow" left>mdi-star-outline</v-icon>
+    <v-icon color="yellow" left>mdi-star</v-icon>
     Rating: {{ product.data.rating }}
   </v-btn>
   <v-btn>
