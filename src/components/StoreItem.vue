@@ -5,20 +5,20 @@
     <v-card-subtitle>{{ product.data.category }}</v-card-subtitle>
     <v-card-text>{{ product.data.description }}</v-card-text>
     <v-card-actions style="display: flex;">
-  <v-btn>
-    <v-icon color="green" left>mdi-cash</v-icon>
-    Price: ${{ product.data.price }}
-  </v-btn>
-  <v-btn>
-    <v-icon color="yellow" left>mdi-star</v-icon>
-    Rating: {{ product.data.rating }}
-  </v-btn>
-  <v-btn>
-    <v-icon color="blue" left>mdi-truck-check-outline</v-icon>
-    Stock: {{ product.data.stock }}
-  </v-btn>
-</v-card-actions>
-
+      <v-btn>
+        <v-icon color="green" left>mdi-cash</v-icon>
+        ${{ product.data.price }}
+      </v-btn>
+      <v-btn>
+        <v-icon color="yellow" left v-if="product.data.rating >= 4">mdi-star</v-icon>
+        <v-icon color="yellow" left v-else>mdi-star-outline</v-icon>
+        {{ product.data.rating }}
+      </v-btn>
+      <v-btn>
+        <v-icon color="blue" left>mdi-truck-check-outline</v-icon>
+        Stock: {{ product.data.stock }}
+      </v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 
